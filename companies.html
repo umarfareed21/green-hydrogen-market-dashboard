@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenH₂ Intelligence — Company Explorer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/companies.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="dot"><svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 3 1.5 5.5 4 7l1 4h8l1-4c2.5-1.5 4-4 4-7 0-5-4-9-9-9z"/></svg></div>
+    <span>Green<em>H₂</em> Intelligence</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Dashboard</a>
+    <a href="companies.html" class="active">Companies</a>
+  </div>
+  <div class="nav-badge">100 Companies</div>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">Company Intelligence</div>
+  <h1>Green Hydrogen<br><span>Company Explorer</span></h1>
+  <p>Explore 100 leading green hydrogen companies across 20 countries. Filter by country, technology, type, or search by name.</p>
+</section>
+
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </span>
+    <input type="text" id="searchInput" placeholder="Search companies, projects…" oninput="applyFilters()">
+  </div>
+  <select class="filter-select" id="countryFilter" onchange="applyFilters()">
+    <option value="">All Countries</option>
+  </select>
+  <select class="filter-select" id="typeFilter" onchange="applyFilters()">
+    <option value="">All Types</option>
+    <option value="Public">Public</option>
+    <option value="Private">Private</option>
+    <option value="State-Owned">State-Owned</option>
+    <option value="JV">JV</option>
+  </select>
+  <select class="filter-select" id="techFilter" onchange="applyFilters()">
+    <option value="">All Technologies</option>
+    <option value="PEM">PEM</option>
+    <option value="Alkaline">Alkaline</option>
+    <option value="AEM">AEM</option>
+  </select>
+  <select class="filter-select" id="sortBy" onchange="applyFilters()">
+    <option value="revenue">Sort: Revenue</option>
+    <option value="capacity">Sort: Capacity MW</option>
+    <option value="production">Sort: H₂ Production</option>
+    <option value="rank">Sort: Country Rank</option>
+  </select>
+  <div class="count-badge">Showing <strong id="countDisplay">100</strong> companies</div>
+</div>
+
+<main class="main">
+
+  <!-- STATS -->
+  <div class="stats-row" id="statsRow"></div>
+
+  <!-- DISTRIBUTION -->
+  <div class="dist-row" id="distRow"></div>
+
+  <!-- TABLE -->
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Company</th>
+          <th>Country</th>
+          <th>Type</th>
+          <th>Technology</th>
+          <th>Key Project</th>
+          <th>Capacity MW</th>
+          <th>H₂ Production</th>
+          <th>Revenue $M</th>
+          <th>Focus</th>
+        </tr>
+      </thead>
+      <tbody id="companyTable"></tbody>
+    </table>
+    <div id="emptyState" class="empty" style="display:none">
+      <div>🔍</div>
+      <p>No companies match your filters. Try adjusting your search.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <strong>GreenH₂ Intelligence Platform</strong><br>
+      Data sources: IEA, IMARC Group, Precedence Research, Grand View Research · 2025–2026 · 20 Countries · 100 Companies
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Dashboard</a>
+      <a href="companies.html">Companies</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/companies.js" defer></script>
+</body>
+</html>

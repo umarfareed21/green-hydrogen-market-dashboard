@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenH₂ Intelligence — Market Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css">
+<script src="js/script.js" defer></script>
+
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="dot">
+      <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 3 1.5 5.5 4 7l1 4h8l1-4c2.5-1.5 4-4 4-7 0-5-4-9-9-9z"/></svg>
+    </div>
+    <span>Green<em>H₂</em> Intelligence</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="companies.html">Companies</a>
+  </div>
+  <div class="nav-badge">2025–2026 Data</div>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">Market Intelligence Platform</div>
+  <h1>Green Hydrogen<br><span>Market Dashboard</span></h1>
+  <p>Real-time insights across 20 countries — select a country to explore KPIs, investment data, and leading companies in the green hydrogen economy.</p>
+  <div class="selector-row">
+    <span class="selector-label">Select Country</span>
+    <div class="country-select-wrap">
+      <select id="countrySelect" onchange="updateDashboard()">
+        <option value="China">🇨🇳 China</option>
+        <option value="USA">🇺🇸 USA</option>
+        <option value="Germany">🇩🇪 Germany</option>
+        <option value="Australia">🇦🇺 Australia</option>
+        <option value="India">🇮🇳 India</option>
+        <option value="Saudi Arabia">🇸🇦 Saudi Arabia</option>
+        <option value="Japan">🇯🇵 Japan</option>
+        <option value="South Korea">🇰🇷 South Korea</option>
+        <option value="Spain">🇪🇸 Spain</option>
+        <option value="France">🇫🇷 France</option>
+        <option value="Netherlands">🇳🇱 Netherlands</option>
+        <option value="United Kingdom">🇬🇧 United Kingdom</option>
+        <option value="Chile">🇨🇱 Chile</option>
+        <option value="Brazil">🇧🇷 Brazil</option>
+        <option value="Norway">🇳🇴 Norway</option>
+        <option value="Oman">🇴🇲 Oman</option>
+        <option value="Canada">🇨🇦 Canada</option>
+        <option value="Morocco">🇲🇦 Morocco</option>
+        <option value="Portugal">🇵🇹 Portugal</option>
+        <option value="Sweden">🇸🇪 Sweden</option>
+      </select>
+    </div>
+    <a href="companies.html" class="btn-compare">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      View All Companies
+    </a>
+  </div>
+</section>
+
+<main class="main">
+
+  <div class="region-row">
+    <div class="region-chip" id="regionChip">Asia Pacific</div>
+    <span class="data-source">Sources: IEA · IMARC · Precedence Research · Grand View Research</span>
+  </div>
+
+  <!-- KPI CARDS -->
+  <div class="kpi-grid" id="kpiGrid">
+    <!-- filled by JS -->
+  </div>
+
+  <!-- CHART ROW -->
+  <div class="chart-row">
+    <div class="chart-card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Global Market Size Comparison</div>
+          <div class="card-sub">Market Size in USD Billion — all 20 countries</div>
+        </div>
+        <div class="card-badge" id="selectedHighlight">China #1</div>
+      </div>
+      <div class="bar-list" id="marketBars"></div>
+    </div>
+    <div class="chart-card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Key Metrics</div>
+          <div class="card-sub">Selected country indicators</div>
+        </div>
+      </div>
+      <div class="gauges-grid" id="gaugesGrid"></div>
+    </div>
+  </div>
+
+  <!-- INSIGHT CARDS -->
+  <div class="insight-row" id="insightRow"></div>
+
+  <!-- COMPANY SECTION -->
+  <div class="section-header">
+    <div class="section-title" id="companyTitle">Top 5 Companies — China</div>
+    <a href="companies.html" class="see-all">View all 100 companies →</a>
+  </div>
+  <div class="company-grid" id="companyGrid"></div>
+
+  <!-- GLOBAL TABLE -->
+  <div style="margin-top:36px;">
+    <div class="section-header">
+      <div class="section-title">Global Rankings</div>
+      <span style="font-size:12px;color:var(--text3);">Sorted by Market Size</span>
+    </div>
+    <div class="table-card">
+      <div class="table-top"></div>
+      <table id="rankTable">
+        <thead>
+          <tr>
+            <th>#</th><th>Country</th><th>Region</th>
+            <th>Market Size</th><th>H₂ Cost</th><th>CAGR</th>
+            <th>RE Share</th><th>Gov. Investment</th><th>Demand MTPA</th>
+          </tr>
+        </thead>
+        <tbody id="rankTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <strong>GreenH₂ Intelligence Platform</strong><br>
+      Data sources: IEA, IMARC Group, Precedence Research, Grand View Research · 2025–2026 · 20 Countries · 100 Companies
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Dashboard</a>
+      <a href="companies.html">Companies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

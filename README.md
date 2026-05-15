@@ -95,6 +95,9 @@ green-hydrogen-market-dashboard/
 │
 └── assets/
     │
+    ├── favicon-logo/
+    │   └── favicon.png
+    │
     ├── screenshots/
     │   ├── dashboard-home.png
     │   ├── dashboard-home-1.png

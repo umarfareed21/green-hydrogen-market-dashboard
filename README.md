@@ -10,7 +10,7 @@ https://umarfareed21.github.io/green-hydrogen-market-dashboard/
 # Demo
 
 <p align="center">
-  <img src="assets/demo.gif" alt="Green Hydrogen Dashboard Demo" width="900">
+  <img src="assets/gif/demo.gif" alt="Green Hydrogen Market Dashboard Demo" width="900">
 </p>
 
 <p align="center">

@@ -6,6 +6,25 @@ A modern interactive dashboard for analyzing the global green hydrogen market ac
 # Live Website
 https://umarfareed21.github.io/green-hydrogen-market-dashboard/
 ---
+
+# Demo
+
+<p align="center">
+  <img src="assets/demo.gif" alt="Green Hydrogen Dashboard Demo" width="900">
+</p>
+
+<p align="center">
+  <a href="https://umarfareed21.github.io/green-hydrogen-market-dashboard/">
+    🌐 Live Demo
+  </a>
+  •
+  <a href="https://youtu.be/8txNBleSq9k">
+    🎥 YouTube Video
+  </a>
+</p>
+
+---
+
 # Overview
 
 This project provides a clean and professional market intelligence platform.
@@ -126,12 +145,6 @@ green-hydrogen-market-dashboard/
 
 ---
 
-# Demo Video
-[Watch Demo on YouTube](https://youtu.be/8txNBleSq9k)
-
-[Watch Dashboard Demo](assets/screen-recording/green-hydrogen-dashboard-demo.mov)
-
----
 
 # How to Run
 
